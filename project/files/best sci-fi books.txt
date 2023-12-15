@@ -1,0 +1,100 @@
+    "Dune" by Frank Herbert
+    "Neuromancer" by William Gibson
+    "Ender's Game" by Orson Scott Card
+    "The Hitchhiker's Guide to the Galaxy" by Douglas Adams
+    "Snow Crash" by Neal Stephenson
+    "Foundation" by Isaac Asimov
+    "Brave New World" by Aldous Huxley
+    "The Left Hand of Darkness" by Ursula K. Le Guin
+    "The War of the Worlds" by H.G. Wells
+    "1984" by George Orwell
+    "Hyperion" by Dan Simmons
+    "The Hunger Games" by Suzanne Collins
+    "The Three-Body Problem" by Liu Cixin
+    "The Time Machine" by H.G. Wells
+    "Starship Troopers" by Robert A. Heinlein
+    "Altered Carbon" by Richard K. Morgan
+    "The Forever War" by Joe Haldeman
+    "The Windup Girl" by Paolo Bacigalupi
+    "Alas, Babylon" by Pat Frank
+    "Do Androids Dream of Electric Sheep?" by Philip K. Dick
+    "The Moon is a Harsh Mistress" by Robert A. Heinlein
+    "The Martian" by Andy Weir
+    "The Leftovers" by Tom Perrotta
+    "Jurassic Park" by Michael Crichton
+    "The Expanse series" by James S.A. Corey
+    "Kindred" by Octavia E. Butler
+    "The Day of the Triffids" by John Wyndham
+    "The Handmaid's Tale" by Margaret Atwood
+    "The Fifth Season" by N.K. Jemisin
+    "Childhood's End" by Arthur C. Clarke
+    "The City and the Stars" by Arthur C. Clarke
+    "Red Mars" by Kim Stanley Robinson
+    "Contact" by Carl Sagan
+    "The Hyperion Cantos" by Dan Simmons
+    "The Book of the New Sun" by Gene Wolfe
+    "The Stars My Destination" by Alfred Bester
+    "The Player of Games" by Iain M. Banks
+    "The Road" by Cormac McCarthy
+    "A Fire Upon the Deep" by Vernor Vinge
+    "The Quantum Thief" by Hannu Rajaniemi
+    "The Diamond Age" by Neal Stephenson
+    "The Lathe of Heaven" by Ursula K. Le Guin
+    "The War of the Flowers" by Tad Williams
+    "The Quantum Magician" by Derek Künsken
+    "The Fifth Wave" by Rick Yancey
+    "The City & the City" by China Miéville
+    "The Fireman" by Joe Hill
+    "The Calculating Stars" by Mary Robinette Kowal
+    "Dark Matter" by Blake Crouch
+    "The Wind's Twelve Quarters" by Ursula K. Le Guin
+        "The Rapture of the Nerds" by Cory Doctorow and Charles Stross
+    "The Electric State" by Simon Stålenhag
+    "Anathem" by Neal Stephenson
+    "The Stand" by Stephen King
+    "The Peripheral" by William Gibson
+    "The Quantum Garden" by Derek Künsken
+    "Altered States" by Paddy Chayefsky
+    "The Space Between Worlds" by Micaiah Johnson
+    "The Long Way to a Small, Angry Planet" by Becky Chambers
+    "The Clockwork Orange" by Anthony Burgess
+    "The Postman" by David Brin
+    "The Quantum Thief" by Hannu Rajaniemi
+    "Lock In" by John Scalzi
+    "The Windup Girl" by Paolo Bacigalupi
+    "The Quantum Magician" by Derek Künsken
+    "The Lathe of Heaven" by Ursula K. Le Guin
+    "The Space Merchants" by Frederik Pohl and C.M. Kornbluth
+    "The Peripheral" by William Gibson
+    "The Andromeda Strain" by Michael Crichton
+    "The Left Hand of Darkness" by Ursula K. Le Guin
+    "The Sleeper Awakes" by H.G. Wells
+    "The Leftovers" by Tom Perrotta
+    "The Quantum Thief" by Hannu Rajaniemi
+    "The Drowned World" by J.G. Ballard
+    "The Metamorphosis of Prime Intellect" by Roger Williams
+    "The End of Eternity" by Isaac Asimov
+    "The Long Earth" by Terry Pratchett and Stephen Baxter
+    "The Expanse series" by James S.A. Corey
+    "The Moon Is a Harsh Mistress" by Robert A. Heinlein
+    "The City & the City" by China Miéville
+    "The Stone Sky" by N.K. Jemisin
+    "The Peripheral" by William Gibson
+    "The Hitchhiker's Guide to the Galaxy" by Douglas Adams
+    "The Wind's Twelve Quarters" by Ursula K. Le Guin
+    "The Hunger Games" by Suzanne Collins
+    "The Fifth Season" by N.K. Jemisin
+    "The Expanse series" by James S.A. Corey
+    "The Quantum Thief" by Hannu Rajaniemi
+    "The Handmaid's Tale" by Margaret Atwood
+    "The Fifth Wave" by Rick Yancey
+    "The City & the City" by China Miéville
+    "The Book of the New Sun" by Gene Wolfe
+    "The Stars My Destination" by Alfred Bester
+    "The Player of Games" by Iain M. Banks
+    "The Road" by Cormac McCarthy
+    "A Fire Upon the Deep" by Vernor Vinge
+    "The Quantum Thief" by Hannu Rajaniemi
+    "The Diamond Age" by Neal Stephenson
+    "The Lathe of Heaven" by Ursula K. Le Guin
+    "The War of the Flowers" by Tad Williams
