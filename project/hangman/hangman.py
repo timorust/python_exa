@@ -7,7 +7,7 @@ word = random.choice(wordsFile)[:-1]
 
 userChars = []
 guessWord = len(word) * ["_"]
-print(guessWord)
+print(word)
 guessCount = 6
 
 
@@ -27,6 +27,8 @@ while True:
 		userChars.append(guessChar)
 		guessCount -= 1
 		screenPic(guessCount, guessWord, userChars)
+		# print(f"Number of attempts left: {guessCount}")
+
 	if "".join(guessWord) == word:
 		print("win")
 		break
