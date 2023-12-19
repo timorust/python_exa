@@ -1,20 +1,19 @@
 from Hangman_screen import screenPic
-from random import randint
+import random
+
 wordsList = open("word_list.txt", "r")
 wordsFile = wordsList.readlines()
+word = random.choice(wordsFile)[:-1]
 
-def randWordList(list):
-	for letter in list:
-		randint(0, letter)
-
-word = randWordList(wordsFile)
 userChars = []
 guessWord = len(word) * ["_"]
+print(guessWord)
 guessCount = 6
 
 
 while True:
-	guessChar = input("Enter a character").lower()
+	screenPic(guessCount, guessWord, userChars)
+	guessChar = input("Enter a character: ").lower()
 	if guessChar in userChars:
 		print("You already guessed this letter. Try again.")
 	elif guessChar not in "abcdefjklmnopqrstuvwxyz" :
@@ -28,19 +27,13 @@ while True:
 		userChars.append(guessChar)
 		guessCount -= 1
 		screenPic(guessCount, guessWord, userChars)
-	if guessWord == word:
+	if "".join(guessWord) == word:
 		print("win")
 		break
 	elif guessCount == 0:
 		print("fail")
 		break
 
-
-	
-		
-# print(guessWord)
-	# if guessChar not in userChars and 'a' <= guessChar <= 'z':
-# Screen(0, "test", "test")
 
 		
 
