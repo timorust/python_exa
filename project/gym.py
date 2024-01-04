@@ -6,3 +6,4 @@ while True:
 		result += gymDict[char]
 	print(result)
 
+
