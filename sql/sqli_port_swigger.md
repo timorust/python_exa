@@ -208,4 +208,4 @@ response:
 '+union+SELECT+username_eambhu,password_ozisqd+FROM+users_rxyjbm--+
 ```
 
-in class:
+# **_[9. Blind SQL injection with conditional responses](https://portswigger.net/web-security/sql-injection/blind/lab-conditional-responses)_**
