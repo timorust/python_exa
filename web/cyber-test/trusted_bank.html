@@ -1,0 +1,76 @@
+<!--
+how to serve this site via HTTP.SERVER module:
+1. in VScode: rightclick the keylogger.html and choose 'open in integrated terminal'
+2. run command on the PS terminal window that opened: python -m http.server 7000
+3. on any browser URL go the address: 127.0.0.1:7000
+4. from the list of pages choose and press the link to keylogger.html
+page is served!
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trusted Bank ltd</title>
+
+    <style>
+        body {
+            background-image: url('https://cdn2.interfaz.io/wp-content/uploads/2021/07/banking-as-a-service-1170x617.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+
+        }
+        
+        input {
+            font-family: 'Courier New', 'Courier', 'monospace';
+            font-size: 200%;
+            color: rgb(2, 61, 61);
+            margin-left:30px;
+        }
+        h1,
+        h2,
+        label {
+            font-family: 'Courier New', 'Courier', 'monospace';
+            font-size: 200%;
+            color: azure;
+            margin-left:30px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h2 style=margin-left:30px id="p1">Hello, guest!</h2>
+    <form>
+        <label>
+            <H1>Trusted Bank ltd</H1>
+        </label><br>
+        <label for="name">Username</label><br>
+        <input type="text" id='username' name="username" value="" /><br>
+        <label for="password">Password</label><br>
+        <input type="text" id='passwordf' name="password" value="" /><br><br>
+        <input type='submit' value="submit" />
+    </form>
+
+    <!-- 
+<form>
+    <label for="name">not you? please correct customer name:</label><br>
+    <input type="text" id="name" name="name" value="" /><br>
+</form> -->
+
+    <script>
+        var customer = new URLSearchParams(document.location.search).get('name');
+        if (customer !== null) {
+            document.getElementById('p1').innerHTML = 'welcome dear ' + customer + '!';
+        };
+    </script>
+
+</body>
+
+</html>
+
+

