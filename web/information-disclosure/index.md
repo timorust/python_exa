@@ -298,7 +298,7 @@ Carlos Montoya <carlos@carlos-montoya.net>
 commit: Remove admin password from config
 ```
 
-2. early commit - branch admin password inclusion!
+3. early commit - branch admin password inclusion!
    logs: This directory contains log files that document changes in the repository, including commit history and ref changes.
 
 _commit first commit -m_
@@ -311,7 +311,7 @@ Carlos Montoya <carlos@carlos-montoya.net>
 commit (initial): Add skeleton admin panel
 ```
 
-3. go to PowerShell and send
+4. go to PowerShell and send
 
 ```url
 .\wget.exe
